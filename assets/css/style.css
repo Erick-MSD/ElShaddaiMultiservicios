@@ -7,6 +7,10 @@
     --white: #FFFFFF;
 }
 
+:root {
+   scroll-behavior: smooth; 
+}
+
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
