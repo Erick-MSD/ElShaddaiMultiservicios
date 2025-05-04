@@ -95,3 +95,76 @@ document.addEventListener('DOMContentLoaded', function() {
     updateActiveLink();
 });
 
+// Asegúrate de que esto se ejecute después de que Swiper esté cargado
+document.addEventListener('DOMContentLoaded', function() {
+    // Encuentra todos los elementos con clase init-swiper
+    const swiperElements = document.querySelectorAll('.init-swiper');
+    
+    swiperElements.forEach(function(swiperEl) {
+        // Busca la configuración dentro del elemento
+        let configEl = swiperEl.querySelector('.swiper-config');
+        let config = {};
+        
+        if (configEl) {
+            try {
+                // Intenta analizar la configuración JSON
+                config = JSON.parse(configEl.textContent);
+                
+                // Reducir los valores de spaceBetween si son demasiado grandes
+                if (config.breakpoints) {
+                    for (const [breakpoint, settings] of Object.entries(config.breakpoints)) {
+                        // Ajusta spaceBetween a valores más razonables
+                        if (settings.spaceBetween > 50) {
+                            settings.spaceBetween = Math.min(settings.spaceBetween, 50);
+                        }
+                    }
+                }
+                
+                // Asegurarse de que autoplay esté correctamente configurado
+                if (config.autoplay === true) {
+                    config.autoplay = {
+                        delay: 2500,
+                        disableOnInteraction: false
+                    };
+                }
+                
+                // Inicializar el Swiper con la configuración ajustada
+                new Swiper(swiperEl, config);
+                
+                console.log('Swiper inicializado con éxito:', config);
+            } catch (e) {
+                console.error('Error al analizar la configuración del Swiper:', e);
+                
+                // Fallback a configuración básica en caso de error
+                new Swiper(swiperEl, {
+                    loop: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false
+                    }
+                });
+            }
+        } else {
+            // Si no hay configuración, usar valores predeterminados
+            new Swiper(swiperEl, {
+                loop: true,
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false
+                }
+            });
+        }
+    });
+    
+    // Código para depuración - descomentar si necesitas ver los límites de los elementos
+    /*
+    const debugSwipers = document.querySelectorAll('.init-swiper');
+    debugSwipers.forEach(function(swiper) {
+        swiper.classList.add('debug-mode');
+    });
+    */
+});

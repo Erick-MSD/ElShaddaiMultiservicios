@@ -133,7 +133,65 @@
                     </div>
                 </div>
             </div>
+        </section><!-- End Stats Item -->
+
+        <section id="marcas" class="marcas">
+            <div class="container section-title" data-aos="fade-up">
+                <p>Marcas</p>
+            </div>
+            
+            <div class="container" data-aos="fade-up">
+                <div class="swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                        {
+                            "loop": true,
+                            "speed": 1000,
+                            "autoplay": {
+                                "delay": 2000,
+                                "disableOnInteraction": false
+                            },
+                            "slidesPerView": "auto",
+                            "centeredSlides": true,
+                            "centeredSlidesBounds": true, // <-- Añade esta línea
+                            "centerInsufficientSlides": true, // <-- Añade esta línea
+                            "pagination": {
+                                "el": ".swiper-pagination",
+                                "type": "bullets",
+                                "clickable": true
+                            },
+                            "breakpoints": {
+                                "320": {
+                                    "slidesPerView": 1, // Cambiado de 2 a 1
+                                    "spaceBetween": 20
+                                },
+                                "480": {
+                                    "slidesPerView": 3,
+                                    "spaceBetween": 30
+                                },
+                                "640": {
+                                    "slidesPerView": 4,
+                                    "spaceBetween": 40
+                                },
+                                "992": {
+                                    "slidesPerView": 6, 
+                                    "spaceBetween": 50
+                                }
+                            }                           
+                        }
+                    </script>
+                    <div class="swiper-wrapper align-items-center">
+                        <div class="swiper-slide"><img src="assets/img/Mabe.png" class="img-fluid" alt="Mabe"></div>
+                        <div class="swiper-slide"><img src="assets/img/Mirage.png" class="img-fluid" alt="Mirage"></div> 
+                        <div class="swiper-slide"><img src="assets/img/Prime.png" class="img-fluid" alt="Prime"></div> 
+                        <div class="swiper-slide"><img src="assets/img/York.png" class="img-fluid" alt="York"></div> 
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
         </section>
+
+        <!-- Galery Section-->
+         
 
         <section id="contacto" class="contact container py-5">
             <h2 class="text-center mb-4">Contacto y Cotización</h2>
