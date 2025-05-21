@@ -563,3 +563,152 @@ a:hover {
         max-height: 45px; /* Puedes reducir un poco más si es necesario */
     }
 }
+  .service-card {
+    text-align: center;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .service-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+ /* ======================
+   Botón API
+   ====================== */
+.menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .menu .btn {
+    width: 60px;
+    height: 60px;
+    background: #1E88E5; /* Azul medio que contrasta bien con fondo blanco */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu .btn img {
+    width: 35px;
+  }
+  
+  .menu .btn:hover {
+    transform: scale(1.1);
+    background-color: #1976D2; /* Un azul ligeramente más oscuro al hacer hover */
+  }
+  
+  .menu .burbujas {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .menu .burbujas a {
+    width: 45px;
+    height: 45px;
+    background-color: #FFFFFF;
+    border: 2px solid #1E88E5;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .menu .burbujas a:hover {
+    transform: scale(1.1);
+    background-color: #E3F2FD; /* Azul muy claro para hover */
+  }
+  
+  .menu .burbujas a img {
+    width: 25px;
+  }
+  
+  .menu.active .burbujas {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+
+ /* ======================
+   Footer
+   ====================== */
+  .footer-area {
+    background-color: #F3F4F6;
+}
+
+.footer-heading {
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.footer-links a:hover {
+    color: #1E88E5 !important;
+    transition: all 0.3s ease;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.newsletter .form-control {
+    border-radius: 4px;
+    height: 40px;
+}
+
+.newsletter .btn {
+    height: 40px;
+    min-width: 60px;
+    background-color: #1E88E5;
+    border-color: #1E88E5;
+}
+
+@media (max-width: 767.98px) {
+    .footer-area {
+        text-align: center;
+    }
+    
+    .footer-heading {
+        margin-top: 20px;
+    }
+}
